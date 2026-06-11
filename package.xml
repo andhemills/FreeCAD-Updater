@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package format="1" xmlns="https://wiki.freecad.org/Package_Metadata">
+  <name>UpdateChecker</name>
+  <description>Checks for updates to FreeCAD and all installed workbenches/addons at startup.</description>
+  <version>1.0.0</version>
+  <date>2025-01-01</date>
+  <maintainer email="">FreeCAD User</maintainer>
+  <license>LGPL-2.1</license>
+  <url type="repository">https://github.com/YOURUSER/UpdateChecker</url>
+  <content>
+    <workbench classname="UpdateCheckWorkbench"/>
+  </content>
+  <freecadmin>0.21</freecadmin>
+</package>
