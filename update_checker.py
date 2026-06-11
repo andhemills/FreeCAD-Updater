@@ -260,7 +260,7 @@ def show_results_dialog(fc_result, addon_results):
 
         # ---- FreeCAD update message ----
         if freecad_has_update:
-            lbl = QtWidgets.QLabel("<b style='color:#c0392b;'>&#x2B06; FreeCAD has an update</b>")
+            lbl = QtWidgets.QLabel("<b style='color:#FFFFEE;'>&#x2B06; FreeCAD has an update</b>")
             layout.addWidget(lbl)
             layout.addWidget(_build_table([fc_result]))
 
@@ -271,8 +271,12 @@ def show_results_dialog(fc_result, addon_results):
                 msg = "There's 1 addon update available"
             else:
                 msg = "There are " + str(n) + " addon updates available"
-            lbl = QtWidgets.QLabel("<b style='color:#c0392b;'>&#x2B06; " + msg + "</b>")
+            lbl = QtWidgets.QLabel("<b style='color:#FFFFEE;'>&#x2B06; " + msg + "</b>")
             layout.addWidget(lbl)
+            note = QtWidgets.QLabel("Updates may be detected before they appear in Addon Manager. Check a few hours later if Addon Manager doesn't show updates available.")
+            note.setStyleSheet("color: #888888; font-size: 9pt;")
+            note.setWordWrap(True)
+            layout.addWidget(note)
             layout.addWidget(_build_table(addon_updates))
 
         # ---- All up to date message ----
@@ -439,7 +443,7 @@ def _build_table(results):
             for col in range(3):
                 item = table.item(row, col)
                 if item:
-                    item.setForeground(QtGui.QColor("#c0392b"))
+                    item.setForeground(QtGui.QColor("#FFFFEE"))
 
     table.resizeRowsToContents()
     row_h = table.rowHeight(0) if len(results) > 0 else 24
